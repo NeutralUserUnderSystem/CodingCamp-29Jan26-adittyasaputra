@@ -56,28 +56,70 @@
 
         <!-- Message Us Page -->
         <section id="message-us-page" class="min-h-[500px] mx-8">
-            <header>
-                <h2 class="text-xl font-bold">Message Us</h2>
-                <p class="mt-2">Have questions or want to work with us? Send us a message and we'll get back to you
-                    promptly.</p>
-            </header>
+            <div class="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
+                <!-- Left Column - Form -->
+                <div class="w-full md:w-1/2">
+                    <header class="mb-8">
+                        <h2 class="text-xl font-bold">Message Us</h2>
+                        <p class="mt-2">Have questions or want to work with us? Send us a message and we'll get back to you promptly.</p>
+                    </header>
 
-            <form>
-                <div class="mb-4">
-                    <label class="block mb-2" for="name">Name:</label>
-                    <input class="w-full p-2 border rounded" type="text" id="name" name="name" required />
+                    <form id="messageForm">
+                        <div class="mb-4">
+                            <label class="block mb-2" for="name">Name:</label>
+                            <input class="w-full p-2 border rounded" type="text" id="name" name="name" required />
+                        </div>
+                        <div class="mb-4">
+                            <label class="block mb-2" for="dob">Tanggal Lahir:</label>
+                            <input class="w-full p-2 border rounded" type="date" id="dob" name="dob" required />
+                        </div>
+                        <div class="mb-4">
+                            <label class="block mb-2">Jenis Kelamin:</label>
+                            <div class="flex space-x-4 mt-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="gender" value="Laki-Laki" class="mr-2" required />
+                                    Laki-Laki
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="gender" value="Perempuan" class="mr-2" />
+                                    Perempuan
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block mb-2" for="message">Message:</label>
+                            <textarea class="w-full p-2 border rounded" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" type="button" id="send">Send Message</button>
+                    </form>
                 </div>
-                <div class="mb-4">
-                    <label class="block mb-2" for="email">Email:</label>
-                    <input class="w-full p-2 border rounded" type="email" id="email" name="email" required />
+
+                <!-- Right Column - Results -->
+                <div class="w-full md:w-1/2">
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <div class="mb-4">
+                            <span class="font-semibold">Nama:</span>
+                            <span id="resultName" class="ml-2"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <span class="font-semibold">Tanggal Lahir:</span>
+                            <span id="resultDOB" class="ml-2"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <span class="font-semibold">Jenis Kelamin:</span>
+                            <span id="resultGender" class="ml-2"></span>
+                        </div>
+
+                        <div>
+                            <span class="font-semibold">Pesan:</span>
+                            <span id="resultMessage" class="ml-2"></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <label class="block mb-2" for="message">Message:</label>
-                    <textarea class="w-full p-2 border rounded" id="message" name="message" rows="5"
-                        required></textarea>
-                </div>
-                <button class="px-4 py-2 bg-blue-500 text-white rounded" id="send" type="button">Send Message</button>
-            </form>
+            </div>
         </section>
     </main>
 
