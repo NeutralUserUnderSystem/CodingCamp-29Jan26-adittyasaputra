@@ -16,4 +16,29 @@ function welcomeMessage() {
 }
 
 // Function to handle message submission (currently empty)
-function submitMessage() { }
+document.getElementById("send").addEventListener("click", submitMessage);
+
+function submitMessage() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Validation
+    if (name === "" || email === "" || message === "") {
+        alert("Please fill in all fields!");
+        return;
+    }
+
+    // Display message (demo purpose)
+    alert(
+        "Message Sent!\n\n" +
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Message: " + message
+    );
+
+    // Reset form
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+}
